@@ -11,7 +11,7 @@
     "lint": "eslint app chrome test scripts webpack/*.js",
     "test-e2e": "cross-env NODE_ENV=test mocha -r ./test/setup-app test/e2e",
     "test": "cross-env NODE_ENV=test mocha -r ./test/setup-app test/app",
-    "seed": "node scripts/seed.js",
+    "seed": "node server/db/seed/seed.js",
     "start": "node server"
   },
   "repository": {
@@ -78,6 +78,7 @@
     "connect-session-sequelize": "^6.1.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "faker": "^4.1.0",
     "helmet": "^3.21.3",
     "morgan": "^1.9.1",
     "passport": "^0.4.1",
