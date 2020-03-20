@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import MainSection from '../components/MainSection';
 import * as TodoActions from '../actions/todos';
 import style from './App.css';
+import {Login, Signup} from '../components/auth-form'
 
 @connect(
   state => ({
@@ -26,7 +27,9 @@ export default class App extends Component {
 
     return (
       <div className={style.normal}>
-        <Header addTodo={actions.addTodo} />
+        {/* <Header addTodo={actions.addTodo} /> */}
+        <Signup />
+        <Login />
         <MainSection todos={todos} actions={actions} />
       </div>
     );
