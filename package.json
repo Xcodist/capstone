@@ -70,6 +70,7 @@
   },
   "dependencies": {
     "autoprefixer": "^7.2.5",
+    "axios": "^0.19.2",
     "bluebird": "^3.3.4",
     "cheerio": "^1.0.0-rc.3",
     "cheerio-tableparser": "^1.0.1",
@@ -80,6 +81,7 @@
     "express-session": "^1.17.0",
     "faker": "^4.1.0",
     "helmet": "^3.21.3",
+    "history": "^4.10.1",
     "morgan": "^1.9.1",
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
@@ -88,9 +90,11 @@
     "react-dock": "^0.2.3",
     "react-dom": "^15.0.2",
     "react-redux": "^4.3.0",
+    "react-router-dom": "^5.1.2",
     "redux": "^3.2.1",
     "redux-thunk": "^2.0.1",
     "request": "^2.88.2",
-    "sequelize": "^5.21.5"
+    "sequelize": "^5.21.5",
+    "socket.io": "^2.3.0"
   }
 }

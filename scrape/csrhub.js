@@ -15,12 +15,12 @@ for (let i = 1; i < 50; i++) {
       });
 
         $('tr').each((i, el) => {
-          let text = $(el)
+          let text = $(el);
             .text()
             .replace(/\s\+/g, '')
           writeStream.write(`${text} \n`)
         })
-        console.log('scraping complete')
+        console.log('scraping complete');
       }
     }
   );
