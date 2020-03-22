@@ -1,17 +1,16 @@
-import React, { PropTypes, Component } from 'react';
-import classnames from 'classnames';
-import { HOME, SEARCH, PROFILE } from '../constants/AppFilters';
-import style from './Footer.css';
+import React, { PropTypes, Component } from "react";
+import classnames from "classnames";
+import { HOME, SEARCH, PROFILE } from "../constants/AppFilters";
+import style from "./Footer.css";
 
 const FILTERS = [HOME, SEARCH, PROFILE];
 const FILTER_TITLES = {
-  [HOME]: 'Home',
-  [SEARCH]: 'Search',
-  [PROFILE]: 'Profile'
+  [HOME]: "Home",
+  [SEARCH]: "Search",
+  [PROFILE]: "Profile"
 };
 
 export default class Footer extends Component {
-
   static propTypes = {
     completedCount: PropTypes.number.isRequired,
     activeCount: PropTypes.number.isRequired,
@@ -29,7 +28,9 @@ export default class Footer extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.onShow) {
-      this.filterHandlers = FILTERS.map(filter => () => nextProps.onShow(filter));
+      this.filterHandlers = FILTERS.map(filter => () =>
+        nextProps.onShow(filter)
+      );
     }
   }
 
@@ -78,13 +79,13 @@ export default class Footer extends Component {
       <footer className={style.footer}>
         {/* {this.renderTodoCount()} */}
         <ul className={style.filters}>
-          {FILTERS.map((filter, i) =>
+          {FILTERS.map((filter, i) => (
             <li key={filter}>
               {this.renderFilterLink(filter, this.filterHandlers[i])}
             </li>
-          )}
+          ))}
         </ul>
-      {/* {this.renderClearButton()} */}
+        {/* {this.renderClearButton()} */}
       </footer>
     );
   }

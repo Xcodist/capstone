@@ -79,7 +79,7 @@
 //       expect(footer.type).to.equal(Footer);
 //       expect(footer.props.completedCount).to.equal(1);
 //       expect(footer.props.activeCount).to.equal(1);
-//       expect(footer.props.filter).to.equal(SHOW_ALL);
+//       expect(footer.props.filter).to.equal(SEARCH);
 //     });
 
 //     it('onShow should set the filter', () => {
