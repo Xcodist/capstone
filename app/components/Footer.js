@@ -1,13 +1,13 @@
 import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters';
+import { HOME, SEARCH, PROFILE } from '../constants/AppFilters';
 import style from './Footer.css';
 
-const FILTERS = [SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED];
+const FILTERS = [HOME, SEARCH, PROFILE];
 const FILTER_TITLES = {
-  [SHOW_ALL]: 'All',
-  [SHOW_ACTIVE]: 'Active',
-  [SHOW_COMPLETED]: 'Completed'
+  [HOME]: 'Home',
+  [SEARCH]: 'Search',
+  [PROFILE]: 'Profile'
 };
 
 export default class Footer extends Component {
@@ -33,16 +33,16 @@ export default class Footer extends Component {
     }
   }
 
-  renderTodoCount() {
-    const { activeCount } = this.props;
-    const itemWord = activeCount === 1 ? 'item' : 'items';
+  // renderTodoCount() {
+  //   const { activeCount } = this.props;
+  //   const itemWord = activeCount === 1 ? 'item' : 'items';
 
-    return (
-      <span className={style.todoCount}>
-        <strong>{activeCount || 'No'}</strong> {itemWord} left
-      </span>
-    );
-  }
+  //   return (
+  //     <span className={style.todoCount}>
+  //       <strong>{activeCount || 'No'}</strong> {itemWord} left
+  //     </span>
+  //   );
+  // }
 
   renderFilterLink(filter, handler) {
     const title = FILTER_TITLES[filter];
@@ -59,24 +59,24 @@ export default class Footer extends Component {
     );
   }
 
-  renderClearButton() {
-    const { completedCount, onClearCompleted } = this.props;
-    if (completedCount > 0) {
-      return (
-        <button
-          className={style.clearCompleted}
-          onClick={onClearCompleted}
-        >
-          Clear completed
-        </button>
-      );
-    }
-  }
+  // renderClearButton() {
+  //   const { completedCount, onClearCompleted } = this.props;
+  //   if (completedCount > 0) {
+  //     return (
+  //       <button
+  //         className={style.clearCompleted}
+  //         onClick={onClearCompleted}
+  //       >
+  //         Clear completed
+  //       </button>
+  //     );
+  //   }
+  // }
 
   render() {
     return (
       <footer className={style.footer}>
-        {this.renderTodoCount()}
+        {/* {this.renderTodoCount()} */}
         <ul className={style.filters}>
           {FILTERS.map((filter, i) =>
             <li key={filter}>
@@ -84,7 +84,7 @@ export default class Footer extends Component {
             </li>
           )}
         </ul>
-        {this.renderClearButton()}
+      {/* {this.renderClearButton()} */}
       </footer>
     );
   }
