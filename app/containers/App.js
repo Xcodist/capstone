@@ -1,20 +1,19 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import Header from '../components/Header';
-import MainSection from '../components/MainSection';
-import * as TodoActions from '../actions/todos';
+//import { bindActionCreators } from 'redux';
+//import { connect } from 'react-redux';
+//import Header from '../components/Header';
 import style from './App.css';
-import {Login, Signup} from '../components/auth-form'
+import { Login, Signup } from '../components/auth-form';
+import Footer from '../components/Footer';
 
-@connect(
-  state => ({
-    todos: state.todos
-  }),
-  dispatch => ({
-    actions: bindActionCreators(TodoActions, dispatch)
-  })
-)
+// @connect(
+//   state => ({
+//     todos: state.todos
+//   }),
+//   dispatch => ({
+//     actions: bindActionCreators(TodoActions, dispatch)
+//   })
+// )
 export default class App extends Component {
 
   static propTypes = {
@@ -23,14 +22,13 @@ export default class App extends Component {
   };
 
   render() {
-    const { todos, actions } = this.props;
 
     return (
       <div className={style.normal}>
         {/* <Header addTodo={actions.addTodo} /> */}
         <Signup />
         <Login />
-        <MainSection todos={todos} actions={actions} />
+        <Footer />
       </div>
     );
   }

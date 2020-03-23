@@ -2,7 +2,6 @@ import axios from 'axios'
 import history from '../containers/history'
 
 
-
 const GET_USER = 'GET_USER'
 
 
@@ -10,7 +9,6 @@ const defaultUser = {}
 
 
 const getUser = user => ({type: GET_USER, user})
-
 
 
 export const me = () => async dispatch => {
@@ -30,7 +28,7 @@ export const auth = (email, password, method) => async dispatch => {
     } catch (authError) {
       return dispatch(getUser({error: authError}))
     }
-  
+
     try {
       dispatch(getUser(res.data))
       history.push('/home')
@@ -38,7 +36,7 @@ export const auth = (email, password, method) => async dispatch => {
       console.error(dispatchOrHistoryErr)
     }
   }
-  
+
   export const logout = () => async dispatch => {
     try {
       await axios.post('/auth/logout')
@@ -58,4 +56,3 @@ export const auth = (email, password, method) => async dispatch => {
         return state
     }
   }
-  
